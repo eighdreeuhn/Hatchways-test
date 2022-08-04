@@ -28,6 +28,7 @@ app.use('/', indexRouter);
  */
 
 app.get('/creator', api.creator);
+app.get('/install', api.install)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

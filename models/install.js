@@ -8,9 +8,9 @@ module.exports = function(sequelize, DataTypes) {
             country: { type: DataTypes.TEXT },
         },
         {
-            createdAt: 'created_at',
-            updatedAt: 'updated_at',
-            deletedAt: 'deleted_at',
+            createdAt: { type: DataTypes.TIMESTAMP },
+            updatedAt: { type: DataTypes.TIMESTAMP },
+            deletedAt: { type: DataTypes.TIMESTAMP },
             paranoid: true,
             underscored: true,
             tableName: 'install',
