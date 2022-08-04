@@ -8,7 +8,7 @@ exports.creator = async (req, res) => {
         let user = await db.sequelize.query(
             'SELECT * FROM creator b\n' +
             'WHERE id=$1\n' +
-            'JOIN install',
+            'JOIN install ON id=creator_id',
             { bind: [creatorId], type: 'RAW' },
         );
         res.render(user[0]);
@@ -19,6 +19,7 @@ exports.creator = async (req, res) => {
 };
 
 exports.install = async (req, res) => {
+    console.log(`Request: ${req}`)
     try {
         const installId = req.query.install_id;
         let install = await db.sequelize.query(
