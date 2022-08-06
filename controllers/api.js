@@ -7,8 +7,7 @@ exports.creator = async (req, res) => {
         const creatorId = req.query.creator_id;
         let user = await db.sequelize.query(
             'SELECT * FROM creator b\n' +
-            'WHERE id=$1\n' +
-            'JOIN install ON id=creator_id',
+            'WHERE id=$1\n',
             { bind: [creatorId], type: 'RAW' },
         );
         res.render(user[0]);

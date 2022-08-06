@@ -26,9 +26,10 @@ if (!global.hasOwnProperty('db')) {
         foreignKey: 'campaign_id',
     });
 
-    global.db.Install.belongsTo(global.db.Creator, {
-        foreignKey: 'install_id'
-    })
+    // global.db.Install.belongsTo(global.db.Creator, {
+    //     foreignKey: 'install_id'
+    // });
+
     /*
     *
     * TODO add any additional relationships between models here.
